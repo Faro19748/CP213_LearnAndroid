@@ -15,18 +15,20 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            // ใช้ Column เป็น Layout หลัก
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(color = Color.DarkGray)
+
             ) {
-                //HP Bar
+                //HP
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(60.dp)
+                        .height(32.dp)
                         .background(color = Color.White)
+
                 ) {
                     Text(
                         text = "HP",
