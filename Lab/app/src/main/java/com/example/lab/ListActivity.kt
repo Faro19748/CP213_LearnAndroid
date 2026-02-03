@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.a523lablearnandroid.ui.theme._523LabLearnAndroidTheme
+import com.example.lab.ui.theme.LabTheme
 
 class ListAcrivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
