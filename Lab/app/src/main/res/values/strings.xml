@@ -4,4 +4,8 @@
     <string name="title_activity_list_activity.kt">ListActivity.kt</string>
     <string name="title_activity_list">ListActivity</string>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_counter_screen">CounterScreen</string>
+    <string name="title_activity_counter_view_model">CounterViewModel</string>
+    <string name="title_activity_counter_intent">CounterIntent</string>
+    <string name="title_activity_counter_state">CounterState</string>
 </resources>
