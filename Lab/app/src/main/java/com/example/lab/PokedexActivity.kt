@@ -97,5 +97,5 @@ fun ListScreen(viewModel: PokemonViewModel) {
 @Preview(showBackground = true)
 @Composable
 fun ListPreview() {
-    ListScreen(PokemonViewModel())
+    ListScreen(viewModel = PokemonViewModel())
 }
