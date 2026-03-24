@@ -65,27 +65,29 @@ class MenuActivity : ComponentActivity() {
                         }
                         
                         Spacer(modifier = Modifier.height(16.dp))
-                        
-                        Button(onClick = {
-                            val intent = Intent(this@MenuActivity, CameraActivity::class.java)
-                            startActivity(intent)
-                        }) {
-                            Text("Go to Camera Task")
-                        }
+
 
                         Spacer(modifier = Modifier.height(32.dp))
                         HorizontalDivider(modifier = Modifier.padding(horizontal = 32.dp))
                         Spacer(modifier = Modifier.height(16.dp))
 
                         Text(
-                            text = "Sensor",
+                            text = " Sensor & GPS (MVVM)",
                             modifier = Modifier.padding(bottom = 16.dp)
                         )
-                        Button(onClick = {
-                            val intent = Intent(this@MenuActivity, SensorActivity::class.java)
-                            startActivity(intent)
-                        }) {
-                            Text("Go to Sensor Task")
+                        Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                            Button(onClick = {
+                                val intent = Intent(this@MenuActivity, SensorActivity::class.java)
+                                startActivity(intent)
+                            }) {
+                                Text("Sensor")
+                            }
+                            Button(onClick = {
+                                val intent = Intent(this@MenuActivity, GpsActivity::class.java)
+                                startActivity(intent)
+                            }) {
+                                Text("GPS")
+                            }
                         }
 
                         Spacer(modifier = Modifier.height(32.dp))
