@@ -1,3 +1,5 @@
+package com.example.lab.architecture
+
 /**
  * Intent (ไม่ใช่ Intent ของ Android)
  * คือการกระทำหรือความตั้งใจของผู้ใช้ที่เรากำหนดขึ้นมา

@@ -1,3 +1,5 @@
+package com.example.lab.architecture
+
 /**
  * Model หรือ State
  * ใช้ Data Class ในการเก็บสถานะทั้งหมดของหน้าจอนี้
