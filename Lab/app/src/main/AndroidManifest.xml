@@ -24,6 +24,21 @@
             android:label="Part 1 Tasks"
             android:theme="@style/Theme.Lab" />
         <activity
+            android:name=".TransitionMainActivity"
+            android:exported="false"
+            android:label="Transitions"
+            android:theme="@style/Theme.Lab" />
+        <activity
+            android:name=".TransitionDetailActivity"
+            android:exported="false"
+            android:label="Transitions Detail"
+            android:theme="@style/Theme.Lab" />
+        <activity
+            android:name=".Part2Activity"
+            android:exported="false"
+            android:label="Part 2 Tasks"
+            android:theme="@style/Theme.Lab" />
+        <activity
             android:name=".GpsActivity"
             android:exported="false"
             android:label="GPS Task"

@@ -67,6 +67,24 @@ class MenuActivity : ComponentActivity() {
                         Spacer(modifier = Modifier.height(16.dp))
 
                         Button(onClick = {
+                            val intent = Intent(this@MenuActivity, Part2Activity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text("Go to Part 2 (Advanced UI)")
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Button(onClick = {
+                            val intent = Intent(this@MenuActivity, TransitionMainActivity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text("Go to Activity Transitions")
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Button(onClick = {
                             val intent = Intent(this@MenuActivity, RPGcardActivity::class.java)
                             startActivity(intent)
                         }) {
