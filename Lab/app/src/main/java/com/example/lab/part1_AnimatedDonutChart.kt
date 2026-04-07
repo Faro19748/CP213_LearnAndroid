@@ -27,62 +27,47 @@ fun AnimatedDonutChart(
     modifier: Modifier = Modifier,
     strokeWidth: Dp = 40.dp
 ) {
-    // ตรวจสอบข้อมูลเบื้องต้น กำหนดให้ List สีมีจำนวนพอดีหรือมากกว่า ค่าเปอร์เซ็นต์
     require(proportions.size <= colors.size) { "Colors list must be at least as large as proportions list" }
 
-    // คำนวณผลรวมทั้งหมด (เผื่อว่าพารามิเตอร์ส่งมาไม่ได้รวมกันเป็น 100 พอดี จะได้แปรผันถูกหลักส่วน)
     val totalProportion = proportions.sum()
-    
-    // แปลงสัดส่วนให้เป็นองศาตามโครงสร้างวงกลม (360 องศา)
     val sweepAngles = proportions.map { (it / totalProportion) * 360f }
 
-    // 3. สร้าง State สำหรับจำค่า Animation ของการกวาดองศาตั้งแต่ 0 ถึง 360
     val sweepAnimation = remember { Animatable(0f) }
 
-    // เริ่มทำงาน Animation เมื่อเปิดหน้าจอนี้ขึ้นมา
     LaunchedEffect(proportions) {
         sweepAnimation.animateTo(
             targetValue = 360f,
-            animationSpec = tween(durationMillis = 1500) // ระยะเวลาวาด 1.5 วินาที
+            animationSpec = tween(durationMillis = 1500)
         )
     }
 
     Canvas(modifier = modifier) {
-        var startAngle = -90f // เริ่มวาดจากด้านบนสุดตามเข็มนาฬิกา (ตําแหน่ง 12 นาฬิกา)
-        var drawnAngle = 0f // ค่าสะสมขององศาที่ได้พิจารณาวาดไปแล้วในลูป
-
-        // ค่าองศารวมที่มีสิทธิ์วาดในขณะนั้น จากการกระทำของ Animation 
+        var startAngle = -90f
+        var drawnAngle = 0f
         val currentGlobalSweepAngle = sweepAnimation.value 
-        
-        // 2. สไตล์วงกลมแบบมีรูตรงกลาง (โดนัท) โดยกำหนดความกว้างเส้น (Stroke) 
         val arcStyle = Stroke(width = strokeWidth.toPx(), cap = StrokeCap.Butt)
 
         for (i in sweepAngles.indices) {
             val arcSweepAngle = sweepAngles[i]
             val color = colors[i]
             
-            // เช็คว่า Animation วาดมาถึงส่วนนี้หรือยัง
             if (currentGlobalSweepAngle > drawnAngle) {
-                // คำนวณองศาที่จะวาดจริงๆ (ถ้า Animation ยังวิ่งไม่สุดส่วนนี้ ก็วาดแค่เท่าที่วิ่งถึง)
                 val sweepToDraw = minOf(arcSweepAngle, currentGlobalSweepAngle - drawnAngle)
                 
                 drawArc(
                     color = color,
                     startAngle = startAngle,
                     sweepAngle = sweepToDraw,
-                    useCenter = false, // false = ไม่วาดเส้นไปที่จุดศูนย์กลาง (เพื่อให้มีรูตรงกลางแบบโดนัท)
+                    useCenter = false,
                     style = arcStyle
                 )
             }
-            startAngle += arcSweepAngle // ขยับจุด Start Angle สำหรับชิ้นต่อไป
-            drawnAngle += arcSweepAngle // เก็บสะสมค่าที่ถูกวาดไปแล้ว
+            startAngle += arcSweepAngle
+            drawnAngle += arcSweepAngle
         }
     }
 }
 
-// ----------------------------------------------------
-// Preview 
-// ----------------------------------------------------
 @Preview(showBackground = true)
 @Composable
 fun AnimatedDonutChartPreview() {
@@ -93,16 +78,15 @@ fun AnimatedDonutChartPreview() {
                 .padding(32.dp),
             contentAlignment = Alignment.Center
         ) {
-            // 1. รับค่าเป็น List เปอร์เซ็นต์ กับ List ของสี
             AnimatedDonutChart(
                 proportions = listOf(30f, 40f, 30f),
                 colors = listOf(
-                    Color(0xFFE91E63), // Pink
-                    Color(0xFF2196F3), // Blue
-                    Color(0xFFFFC107)  // Amber
+                    Color(0xFFE91E63),
+                    Color(0xFF2196F3),
+                    Color(0xFFFFC107)
                 ),
-                modifier = Modifier.size(240.dp), // กำหนดขนาดของโดนัท
-                strokeWidth = 40.dp // ความหนาของขอบโดนัท
+                modifier = Modifier.size(240.dp),
+                strokeWidth = 40.dp
             )
         }
     }

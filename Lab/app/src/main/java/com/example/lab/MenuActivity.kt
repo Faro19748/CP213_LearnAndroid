@@ -58,15 +58,21 @@ class MenuActivity : ComponentActivity() {
                         verticalArrangement = Arrangement.Center
                     ) {
                         Button(onClick = {
+                            val intent = Intent(this@MenuActivity, Part1Activity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text("Go to Part 1 (UI & Animation)")
+                        }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Button(onClick = {
                             val intent = Intent(this@MenuActivity, RPGcardActivity::class.java)
                             startActivity(intent)
                         }) {
                             Text("Go to RPG Card")
                         }
                         
-                        Spacer(modifier = Modifier.height(16.dp))
-
-
                         Spacer(modifier = Modifier.height(32.dp))
                         HorizontalDivider(modifier = Modifier.padding(horizontal = 32.dp))
                         Spacer(modifier = Modifier.height(16.dp))

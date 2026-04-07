@@ -19,6 +19,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab">
         <activity
+            android:name=".Part1Activity"
+            android:exported="false"
+            android:label="Part 1 Tasks"
+            android:theme="@style/Theme.Lab" />
+        <activity
             android:name=".GpsActivity"
             android:exported="false"
             android:label="GPS Task"
