@@ -19,7 +19,7 @@ class PokemonViewModel : ViewModel() {
     fun fetchPokemon() {
         viewModelScope.launch {
             try {
-                // เรียกใช้ API จากไฟล์ PokemonApi.kt ที่เราสร้าง
+                // เรียกใช้ API จากไฟล์ PokemonApi.kt ที่เราสร้าง...
                 val response = PokemonNetwork.api.getKantoPokedex()
 
                 // อัปเดตข้อมูลใส่ State
