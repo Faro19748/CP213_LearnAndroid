@@ -90,6 +90,24 @@ class MenuActivity : ComponentActivity() {
                         }) {
                             Text("Go to RPG Card")
                         }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Button(onClick = {
+                            val intent = Intent(this@MenuActivity, Part9Activity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text("Go to Part 9 (Collapsing Toolbar)")
+                        }
+                        
+                        Spacer(modifier = Modifier.height(16.dp))
+                        
+                        Button(onClick = {
+                            val intent = Intent(this@MenuActivity, Part10Activity::class.java)
+                            startActivity(intent)
+                        }) {
+                            Text("Go to Part 10 (App Widget)")
+                        }
                         
                         Spacer(modifier = Modifier.height(32.dp))
                         HorizontalDivider(modifier = Modifier.padding(horizontal = 32.dp))
