@@ -108,6 +108,23 @@ class MenuActivity : ComponentActivity() {
                         }) {
                             Text("Go to Part 10 (App Widget)")
                         }
+
+                        Spacer(modifier = Modifier.height(16.dp))
+
+                        Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
+                            Button(onClick = {
+                                val intent = Intent(this@MenuActivity, Part11Activity::class.java)
+                                startActivity(intent)
+                            }) {
+                                Text("Part 11")
+                            }
+                            Button(onClick = {
+                                val intent = Intent(this@MenuActivity, Part12Activity::class.java)
+                                startActivity(intent)
+                            }) {
+                                Text("Part 12")
+                            }
+                        }
                         
                         Spacer(modifier = Modifier.height(32.dp))
                         HorizontalDivider(modifier = Modifier.padding(horizontal = 32.dp))

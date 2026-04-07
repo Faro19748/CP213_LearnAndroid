@@ -103,6 +103,16 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_lab_info" />
         </receiver>
+        <activity
+            android:name=".Part11Activity"
+            android:exported="false"
+            android:label="Mission 11: Skeleton Loading"
+            android:theme="@style/Theme.Lab" />
+        <activity
+            android:name=".Part12Activity"
+            android:exported="false"
+            android:label="Mission 12: Dialog and Bottom Sheet"
+            android:theme="@style/Theme.Lab" />
     </application>
 
 </manifest>
