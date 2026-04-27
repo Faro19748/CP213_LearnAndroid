@@ -1,4 +1,0 @@
-สร้าง Project Game
-จัดการ Monster แบบเอานิ้ว slide หน้าจอ ( Fruit Ninja )
-จะมี player อยู่ด้านล่าง หน้าจอและจะมี monster เข้ามาเป็น Wave เวลาฟันจะลด energy จะมีการ recharge เมื่อไม่ได้ฟัน
-Add on :monster มีหลาย type มั power up .....
